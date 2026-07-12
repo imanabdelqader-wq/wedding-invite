@@ -1,58 +1,140 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>دعوة زفاف</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap');
-        
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Amiri', serif;
-            background: url('https://i.imgur.com/k6lP572.jpeg') no-repeat center center fixed;
-            background-size: cover;
-            color: #4a4a4a;
-            text-align: center;
-        }
-        .container {
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.4);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        .verse { font-size: 1.2rem; margin-bottom: 30px; font-style: italic; color: #222; }
-        .names { font-size: 3rem; font-weight: bold; margin: 20px 0; color: #000; }
-        .info { font-size: 1.5rem; margin: 10px 0; font-weight: bold; }
-        .countdown { display: flex; justify-content: center; gap: 10px; margin-top: 20px; }
-        .box { background: white; padding: 10px; border-radius: 8px; border: 1px solid #ddd; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>عدّاد زفاف محمود وإيمان</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Tahoma,sans-serif;
+    background:linear-gradient(135deg,#f8d7da,#fff,#f6e6ff);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.card{
+    background:white;
+    padding:35px;
+    border-radius:25px;
+    width:90%;
+    max-width:500px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+
+h1{
+    color:#c2185b;
+    margin-bottom:10px;
+}
+
+h2{
+    color:#555;
+    font-weight:normal;
+}
+
+#countdown{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    margin:30px 0;
+    flex-wrap:wrap;
+}
+
+.box{
+    background:#c2185b;
+    color:white;
+    padding:15px;
+    border-radius:15px;
+    min-width:70px;
+}
+
+.box span{
+    display:block;
+    font-size:30px;
+    font-weight:bold;
+}
+
+.footer{
+    color:#666;
+    font-size:18px;
+}
+</style>
 </head>
+
 <body>
 
-<div class="container">
-    <div class="verse">
-        "وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً ۚ إِنَّ فِي ذَٰلِكَ لَآيَاتٍ لِّقَوْمٍ يَتَفَكَّرُونَ"
-    </div>
+<div class="card">
 
-    <div>عائلة السيد محمد فحماوي &nbsp; — &nbsp; عائلة السيد عبد الحكيم عبد القادر</div>
-    <p>يتشرفون بدعوتكم لحضور حفل زفاف</p>
+<h1>💍 محمود فحماوي ❤ إيمان عبد القادر</h1>
 
-    <div class="names">محمود & إيمان</div>
+<h2>يسرّنا دعوتكم لحضور حفل زفافنا</h2>
 
-    <div class="info">التاريخ: الجمعة 27 يوليو 2026</div>
-    <div class="info">الموقع: قاعات مؤتة</div>
+<p>📍 قاعة مؤتة</p>
 
-    <div class="countdown">
-        <div class="box">00<br>يوم</div>
-        <div class="box">00<br>ساعة</div>
-        <div class="box">00<br>دقيقة</div>
-    </div>
+<p>📅 الاثنين 27 / 7 / 2026</p>
+
+<div id="countdown">
+
+<div class="box">
+<span id="days">0</span>
+يوم
 </div>
+
+<div class="box">
+<span id="hours">0</span>
+ساعة
+</div>
+
+<div class="box">
+<span id="minutes">0</span>
+دقيقة
+</div>
+
+<div class="box">
+<span id="seconds">0</span>
+ثانية
+</div>
+
+</div>
+
+<div class="footer">
+✨ ننتظركم لتشاركونا أجمل لحظات عمرنا ✨
+</div>
+
+</div>
+
+<script>
+
+const weddingDate = new Date("July 27, 2026 21:00:00").getTime();
+
+const timer = setInterval(function(){
+
+const now = new Date().getTime();
+
+const distance = weddingDate - now;
+
+const days = Math.floor(distance/(1000*60*60*24));
+const hours = Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+const minutes = Math.floor((distance%(1000*60*60))/(1000*60));
+const seconds = Math.floor((distance%(1000*60))/1000);
+
+document.getElementById("days").innerHTML=days;
+document.getElementById("hours").innerHTML=hours;
+document.getElementById("minutes").innerHTML=minutes;
+document.getElementById("seconds").innerHTML=seconds;
+
+if(distance<0){
+clearInterval(timer);
+document.getElementById("countdown").innerHTML="<h2>🎉 ألف مبارك الزواج 🎉</h2>";
+}
+
+},1000);
+
+</script>
 
 </body>
 </html>
