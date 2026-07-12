@@ -15,7 +15,7 @@
             background-size: cover;
             color: #4a4a4a;
             text-align: center;
-        }
+        }ب
         .container {
             padding: 20px;
             background: rgba(255, 255, 255, 0.2);
