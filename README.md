@@ -15,22 +15,17 @@
             background-size: cover;
             color: #4a4a4a;
             text-align: center;
-        }ب
+        }
         .container {
             padding: 20px;
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.6);
             min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
         }
-        .verse { font-size: 1.3rem; margin-bottom: 30px; font-style: italic; color: #222; font-weight: bold; }
-        .names { font-size: 3.5rem; font-weight: bold; margin: 20px 0; color: #000; }
-        .info { font-size: 1.6rem; margin: 10px 0; font-weight: bold; }
-        .link { color: #8b4513; text-decoration: none; font-size: 1.4rem; font-weight: bold; border-bottom: 2px solid #8b4513; }
-        .countdown { display: flex; justify-content: center; gap: 15px; margin-top: 30px; }
-        .box { background: rgba(255, 255, 255, 0.8); padding: 15px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .verse { font-size: 1.2rem; margin-bottom: 30px; font-style: italic; }
+        .names { font-size: 3rem; font-weight: bold; margin: 20px 0; color: #000; }
+        .info { font-size: 1.5rem; margin: 10px 0; }
+        .countdown { display: flex; justify-content: center; gap: 10px; margin-top: 20px; }
+        .box { background: white; padding: 10px; border-radius: 8px; border: 1px solid #ddd; }
     </style>
 </head>
 <body>
@@ -47,8 +42,6 @@
 
     <div class="info">التاريخ: الجمعة 27 يوليو 2026</div>
     <div class="info">الموقع: قاعات مؤتة</div>
-    <br>
-    <a href="https://maps.app.goo.gl/uX3P3GkLqF6z96998" class="link">اضغط هنا للتوجه إلى الموقع</a>
 
     <div class="countdown">
         <div class="box">00<br>يوم</div>
