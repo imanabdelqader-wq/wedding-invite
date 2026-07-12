@@ -11,19 +11,23 @@
             margin: 0;
             padding: 0;
             font-family: 'Amiri', serif;
-            background: url('mybg.jpg') no-repeat center center fixed;
+            background: url('https://i.imgur.com/k6lP572.jpeg') no-repeat center center fixed;
             background-size: cover;
             color: #4a4a4a;
             text-align: center;
         }
         .container {
             padding: 20px;
-            background: rgba(255, 255, 255, 0.6);
+            background: rgba(255, 255, 255, 0.4);
             min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
-        .verse { font-size: 1.2rem; margin-bottom: 30px; font-style: italic; }
+        .verse { font-size: 1.2rem; margin-bottom: 30px; font-style: italic; color: #222; }
         .names { font-size: 3rem; font-weight: bold; margin: 20px 0; color: #000; }
-        .info { font-size: 1.5rem; margin: 10px 0; }
+        .info { font-size: 1.5rem; margin: 10px 0; font-weight: bold; }
         .countdown { display: flex; justify-content: center; gap: 10px; margin-top: 20px; }
         .box { background: white; padding: 10px; border-radius: 8px; border: 1px solid #ddd; }
     </style>
